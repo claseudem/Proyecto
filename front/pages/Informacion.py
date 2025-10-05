@@ -42,5 +42,10 @@ if ticker:
 		else:
 			col2.write(f"**{label}:** {value}")
 
+# Botón para ir a la página de gráficos con el ticker seleccionado
+if st.button(f"Ver Gráficos de *{ticker}*"):
+	st.experimental_set_query_params(ticker=ticker)
+	st.switch_page("pages/graficos.py")
+
 if st.button("Volver al Menú Principal"):
 	st.switch_page("app.py")
